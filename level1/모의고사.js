@@ -2,7 +2,8 @@ function solution(answers) {
   var answer = [];
   let answersarray =
       [[ 1, 2, 3, 4, 5],[2, 1, 2, 3, 2, 4, 2, 5],[3, 3, 1, 1, 2, 2, 4, 4, 5, 5]];
-  let answersvalue = [0,0,0];
+  let answersvalue = [0,0,0]; // [첫번째,두번쨰,세번째] 0 으로 세팅
+
   for(let index=0; index < answers.length ; index++){
     if(answers[index] === answersarray[0][index%5]){ // 첫번째 수포자
       answersvalue[0]++;
@@ -15,10 +16,10 @@ function solution(answers) {
     }
   }
 
-
-  for(let rank = 0 ; rank < answersvalue.length ; rank ++){ // 0일 경우 , 같을 경우
-    if(answersvalue[rank] == 0 ){ // 값이 없다면
-      answersvalue.slice(rank,rank);
+  let maxvalue = Math.max.apply(null,answersvalue); // 개수 세워준 배열에 최대값을 뽑음
+  for (let a = 0 ; a < answersvalue.length ; a++){
+    if(answersvalue[a] === maxvalue){
+      answer.push(a+1); // return에 맞춰주기 위해서 (자리수)
     }
   }
   return answer;
