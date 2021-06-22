@@ -17,7 +17,7 @@ function solution(answers) {
   }
 
   let maxvalue = Math.max.apply(null,answersvalue); // 개수 세워준 배열에 최대값을 뽑음
-  for (let a = 0 ; a < answersvalue.length ; a++){
+  for (let a = 0 ; a < answersvalue.length ; a++){ // 총 개수 카운트 배열에서 ..
     if(answersvalue[a] === maxvalue){
       answer.push(a+1); // return에 맞춰주기 위해서 (자리수)
     }
