@@ -1,17 +1,42 @@
-function solution(numbers) {
-    var answer = [];
-    for (let loop = 0; loop < numbers.length; loop++) { // numbers 1차 for문 
-        for (let value of numbers) { // numbers의 2차 for문 
-            if (loop != numbers.indexOf(value)) { // 서로 다른 인덱스일 경우
-                if (!answer.includes(Number(numbers[loop]) + Number(value))) { // 중복 제거
-                    answer.push(Number(numbers[loop]) + Number(value));
-                }
-            }
+
+// function solution(absolutes, signs) {
+//     var answer = 0;
+
+//     signs.forEach((element, index) => {
+
+//         console.log(element);
+//         console.log(element.toLowercase());
+//         // if (element.toLowerCase().indexOf("true") >= -1) // true 라면 
+//         //     answer += Number(absolutes[index]);
+//         // else {
+//         //     answer -= Number(absolutes[index]); // fasle 라면
+//         // }
+//     });
+
+//     return answer;
+// }
+
+
+
+
+function solution(absolutes, signs) {
+    var answer = 0;
+
+    signs.forEach((element, index) => {
+
+        console.log(String(element).indexOf("true"));
+
+        if (String(element).toLowerCase().indexOf("true") != -1) // true 라면
+            answer += Number(absolutes[index]);
+        else {
+            answer -= Number(absolutes[index]); // fasle 라면
         }
-    }
-    return answer.sort(function (a, b) { return a - b }); // 오름차순 
+    });
+
+    return answer;
 }
 
 
 
-console.log(solution([2, 1, 3, 4, 1]))
+console.log(solution([4, 7, 12], [true, false, true]))
+
