@@ -6,4 +6,5 @@ function solution(price, money, count) {  // 이용료 , 처음애 가지고 있
     return usingprice > money ? usingprice - money : 0 // 처음에 가지고 있던 금액이랑 총 이용요금 비교
 }
 
+
 console.log(solution(3, 20, 4));
