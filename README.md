@@ -1,4 +1,4 @@
-## 알고리즘 여행중 ... ## 
+## 알고리즘 여행중 ## 
 
-- codeforces : 코드포스 
-- programmers : 프로그래머스 
+- codeforces : https://codeforces.com/ 
+- programmers : https://programmers.co.kr/ 
